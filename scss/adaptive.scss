@@ -1,0 +1,164 @@
+.rating-block {
+
+  .rating-block__stars {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+
+      @media screen and (max-width: 768px) {
+      svg:not(:first-child) {
+        display: none;
+      }
+    }
+  }
+}
+
+.second-row__definition__present {
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .more-info{
+    gap: 5px;
+  }
+
+  .line-more-info {
+    display: none;
+  }
+
+  .line-more-info-adaptive{
+    display: block;
+  }
+
+  .first-block {
+    width: min-content;
+  }
+
+  .second-row{
+    flex-wrap: wrap;
+
+    &__image {
+        svg {
+          width: 74px;
+          height: 60px;
+        }
+    }
+
+    &__left-block{
+      width: 100%;
+      border-bottom: 2px solid #EBECF599;
+    }
+
+    &__definition {
+        &__percentage {
+          font-size: 18px;
+        }
+
+        &__text {
+          font-size: 12px;
+          width: 284px;
+          margin-top: 0;
+        }
+    }
+
+    &__rockets {
+      flex-direction: row;
+      width: 90%;
+      flex-wrap: wrap;
+      &__block {
+        flex-basis: calc(50% - 25px);
+      }
+    }
+
+    &__cards{
+      &__first, &__second{
+        display: none;
+      }
+    }
+  }
+
+  .footer-block{
+    flex-direction: column;
+    width: fit-content;
+
+    &__text-block{
+      font-size: 12px;
+      width: 388px;
+      line-height: 20px;
+    }
+
+    &__like {
+      padding: 10px 10px 10px 10px;
+
+      &__block {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+  }
+}
+
+.second-row {
+
+  &__buttons{
+    @media only screen and (min-width: 380px) and (max-width: 768px){
+      flex-direction: row;
+    }
+    @media  (max-width: 379px){
+      flex-direction: column;
+
+      &__first {
+        width: 380px;
+      }
+
+      &__second {
+        width: 380px;
+      }
+    }
+
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px){
+  .second-row{
+    &__rockets{
+      &__block {
+        font-size: 11px;
+      }
+    }
+  }
+
+  .first-block {
+    width: fit-content;
+  }
+
+  .footer-block {
+    width: max-content;
+
+    &__text-block {
+      width: 235px;
+    }
+  }
+}
+
+@media (min-width: 1101px) and (max-width: 1419px){
+  .footer-block {
+    width: 94%;
+
+    &__text-block {
+      line-height: 20px;
+    }
+
+    &__like {
+      &__block {
+        line-height: 15px;
+      }
+    }
+  }
+}

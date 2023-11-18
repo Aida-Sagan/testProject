@@ -1,0 +1,341 @@
+// Переменные
+$font-family: 'Rubik', sans-serif;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$color-primary: #313446;
+$color-secondary: #72768D;
+$color-accent: #53AF1B;
+$color-accent-hover: #67c52d;
+$color-background: #F7F8FD;
+$color-border: #EBECF5;
+$color-gradient-start: #FFC736;
+$color-gradient-end: #FF630C;
+
+// Миксины
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-column-center {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin text-gradient {
+  background: linear-gradient(180deg, $color-gradient-start 0%, $color-gradient-end 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Общие стили для блоков
+%base-block {
+  border-radius: 15px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+// Стили для .first-block
+.first-block {
+  @extend %base-block;
+  background: $color-background;
+  display: flex;
+  flex-direction: column;
+  margin-top: 22px;
+
+  @media (min-width: 1000px) and (max-width: 1399px) {
+    width: fit-content;
+  }
+
+  &__rating {
+    @include flex-center;
+    justify-content: space-between;
+    border-bottom: 2px solid $color-border;
+    padding: 0 15px;
+  }
+}
+
+// Стили для .svg-header
+.svg-header {
+  @include flex-center;
+  justify-content: center;
+}
+
+// Стили для .block-brand-left
+.block-brand-left {
+  @include flex-center;
+  align-items: center;
+  gap: 10px;
+
+  &__number {
+    @include text-gradient;
+    font-family: $font-family;
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+  }
+
+  &__brand-name {
+    color: $color-primary;
+    font-family: $font-family;
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.rating-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__score{
+    color: #313446;
+    font-family: Rubik;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
+
+.second-row{
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 15px;
+
+  &__left-block {
+    display: flex;
+    gap: 18px;
+  }
+
+  &__definition{
+
+    &__present{
+      display: flex;
+      align-items: center;
+      margin-top: -15px;
+
+      &__bonus {
+        color: #72768D;
+        font-family: Rubik;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+
+    &__percentage{
+      color: #313446;
+      font-family: Rubik;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    &__text{
+      color: #72768D;
+      font-family: Rubik;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px; /* 142.857% */
+      width: 284px;
+      margin-top: 11px;
+    }
+  }
+
+  &__rockets {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+
+    &__block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: #72768D;
+      font-family: Rubik;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+    }
+  }
+
+  &__cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__first{
+      display: flex;
+      gap: 20px;
+    }
+
+    &__second{
+      display: flex;
+      gap: 20px;
+    }
+
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &__first {
+      width: 180px;
+      height: 55px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: #53AF1B;
+      border: none;
+
+      color: #FFF;
+      font-family: Rubik;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      cursor: pointer;
+
+      &:hover{
+        background: #67c52d;
+      }
+    }
+
+    &__second{
+      width: 180px;
+      height: 55px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: rgba(235, 236, 245, 0.49);
+      cursor: pointer;
+
+      color: #6F728C;
+      font-family: Rubik;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      border: none;
+
+      &:hover{
+        background: rgba(190, 191, 204, 0.49);
+      }
+    }
+  }
+}
+
+.more-info{
+  color: #A6AAC3;
+  font-family: Rubik;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+
+  @media (min-width: 769px) and (max-width: 1310px) {
+    font-size: 11px;
+  }
+}
+
+.line-more-info-adaptive{
+  display: none;
+}
+
+.more-info-panel2,
+.more-info-panel,
+.more-info-panel3{
+  display: none;
+}
+
+.more-info-panel2,
+.more-info-panel,
+.more-info-panel3{
+  gap: 12px;
+}
+
+.arrow-grey{
+  display: none;
+}
+
+.footer-block {
+  border-radius: 0 0 15px 15px;
+  background: #F1F3FD;
+  margin-left: 60px;
+  margin-right: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+
+  &__text-block{
+    color: #72768D;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 178.571% */
+    width: 491px;
+    padding: 15px 0 15px 15px;
+  }
+
+  &__like{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 15px;
+    border: 2px solid #EBECF5;
+    align-self: center;
+    height: 178px;
+    padding: 15px 15px 15px 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    &__block{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: #72768D;
+      font-family: Rubik;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 25px;
+    }
+  }
+}
+
+.last-block {
+  border-radius: 15px 15px 0 0;
+}
+
+/* Для блоков, которые будут появляться */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
